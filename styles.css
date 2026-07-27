@@ -2,6 +2,7 @@
   --main-clr: rgb(255, 248, 239);
 
   --border-template: 6px dashed rgb(175, 212, 238);
+  --outline-template: 3px dashed rgb(175, 212, 238);
 }
 
 * {
@@ -52,7 +53,7 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
 
   gap: 1rem;
   padding: min(16px, 2.4%);
@@ -68,4 +69,39 @@ main {
   min-height: 300px;
 
   padding: min(16px, 3%);
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section h1 {
+  text-align: center;
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 auto;
+
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  margin-block-end: 0.5rem;
+  /* padding-block-end: 1rem; */
+
+  /* background-color: rgba(229, 168, 229, 0.5);
+  outline: var(--outline-template); */
 }

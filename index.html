@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
+
+  <!-- 
+    Build a browser form which collects Email, Country, Postal Code, Password and Password Confirmation fields. 
+    It should use live inline validation to inform the user whether a field is properly filled in or not. 
+    That means validating as you type, not only upon form submission. 
+    When a field is invalid, it should be highlighted in red and show an error message to guide the user.
+    
+    you should give an error message if the button is pushed with any active errors or unfilled required fields. 
+    For the sake of this lesson, make sure the <form> element has the novalidate attribute which will allow you to do all of your validation in your JavaScript files. 
+    You can still use different <input> types, but you will need to use JavaScript to check and report their validity. 
+    If all is well and the form is “submitted”, give the user a high five.
+    -->
+
   <body>
     <header>
       <h1>Js Form Validation</h1>
@@ -24,13 +37,86 @@
           </p>
         </div>
         <div class="main-grid-cell form-section">
-          <h2>Form Cell</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-            cupiditate pariatur, nemo minus sint enim saepe distinctio odio cum
-            quas, optio iusto necessitatibus eius quidem blanditiis totam?
-            Quaerat, aut adipisci.
-          </p>
+          <div class="form-header">
+            <h2>Sign up below!</h2>
+          </div>
+          <form
+            action=""
+            method="get"
+            class="sign-up-form"
+            id="signUpForm"
+            novalidate
+          >
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="johndoe@example.com"
+                aria-describedby="emailErrorField"
+                required
+              />
+              <span class="error-field" id="emailErrorField"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="country">Country</label>
+              <input
+                type="text"
+                id="country"
+                name="country"
+                aria-describedby="countryErrorField"
+                required
+              />
+              <span class="error-field" id="countryErrorField"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="postcode">Postcode</label>
+              <input
+                name="postcode"
+                id="postcode"
+                type="text"
+                pattern="([a-zA-Z]{1,2}\d{1,2}[a-zA-Z]? ?\d[a-zA-Z]{2}|GIR ?0AA)"
+                title="Enter a valid UK postcode."
+                placeholder="Enter your postcode"
+                aria-describedby="postcodeErrorField"
+                required
+              />
+              <span class="error-field" id="postcodeErrorField"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                aria-describedby="passwordErrorField"
+                required
+              />
+              <span class="error-field" id="passwordErrorField"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                id="confirmPassword"
+                name="confirmPassword"
+                aria-describedby="confirmPasswordErrorField"
+                required
+              />
+              <span class="error-field" id="confirmPasswordErrorField"></span>
+            </div>
+
+            <div class="form-row">
+              <button type="submit">Sign Up</button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
