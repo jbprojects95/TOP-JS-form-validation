@@ -5,6 +5,16 @@
   --outline-template: 3px dashed rgb(175, 212, 238);
 }
 
+@font-face {
+  font-family: "uglyqua";
+  src: url(./fonts/UglyQua.ttf);
+}
+
+@font-face {
+  font-family: "aquilinetwo";
+  src: url(./fonts/AquilineTwo.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,28 +43,39 @@ body > * {
   border: var(--border-template);
 }
 
-.hero > * {
-  border: var(--border-template);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "aquilinetwo";
+  color: #3b3e5a;
+  /* color: #50230d; */
 }
 
 header,
 footer {
   text-align: center;
 
-  padding: min(16px, 2.4%);
+  padding: min(16px, 2%);
 
   background-color: rgb(241, 226, 255);
 }
 
+header h1 {
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
 main {
   height: 100%;
-  background-color: rgb(214, 241, 214);
+  background-color: #f1e9d2;
 
   background-image: url(./img/medievalreiki.svg);
-  background-size: cover;
+  background-size: min(90%, 900px) auto;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 90%;
 }
 
 .hero {
@@ -77,13 +98,31 @@ main {
   padding: min(16px, 3%);
 }
 
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  text-align: center;
+}
+
+.main-grid-cell h2 {
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
+.info-section p {
+  font-family: "uglyqua";
+  font-size: 1.4rem;
+}
+
 .form-section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.form-section h1 {
+.form-section h2 {
   text-align: center;
 }
 
@@ -110,4 +149,10 @@ main {
 
   /* background-color: rgba(229, 168, 229, 0.5);
   outline: var(--outline-template); */
+}
+
+.form-row label {
+  font-family: "uglyqua";
+  font-weight: 900;
+  font-size: 1.2rem;
 }
