@@ -61,11 +61,11 @@ function checkForm() {
   }
 }
 
-function removeCustomErrorMsg(inputField) {
-  if (inputField.value) {
-    inputField.setCustomValidity("");
-  }
-}
+// function removeCustomErrorMsg(inputField) {
+//   if (inputField.value) {
+//     inputField.setCustomValidity("");
+//   }
+// }
 
 signUpForm.addEventListener("submit", (e) => {
   e.preventDefault();
