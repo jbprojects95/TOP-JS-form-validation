@@ -39,9 +39,9 @@ body {
   background-color: var(--main-clr);
 }
 
-body > * {
+/* body > * {
   border: var(--border-template);
-}
+} */
 
 h1,
 h2,
@@ -155,4 +155,17 @@ main {
   font-family: "uglyqua";
   font-weight: 900;
   font-size: 1.2rem;
+}
+
+.form-row input:user-invalid {
+  border: 2px solid red;
+}
+
+.form-row input:user-valid {
+  border: 2px solid green;
+}
+
+.error-field {
+  font-size: 0.9rem;
+  min-height: 1em;
 }
