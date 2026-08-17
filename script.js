@@ -17,9 +17,10 @@ const confirmPasswordErrorField = document.getElementById(
 );
 
 emailInput.addEventListener("input", checkEmail);
-countyInput.addEventListener("input", checkcounty);
+countyInput.addEventListener("input", checkCounty);
 postcodeInput.addEventListener("input", checkPostcode);
 passwordInput.addEventListener("input", checkPassword);
+passwordInput.addEventListener("input", checkConfirmPassword);
 confirmPasswordInput.addEventListener("input", checkConfirmPassword);
 
 function checkEmail() {
@@ -35,7 +36,7 @@ function checkEmail() {
   }
 }
 
-function checkcounty() {
+function checkCounty() {
   if (countyInput.value === "") {
     countyInput.setCustomValidity("I am expecting a UK county!");
     countyErrorField.textContent = "I am expecting a UK county!";
@@ -86,7 +87,7 @@ function checkConfirmPassword() {
 
 function checkForm() {
   checkEmail();
-  checkcounty();
+  checkCounty();
   checkPostcode();
   checkPassword();
   checkConfirmPassword();
